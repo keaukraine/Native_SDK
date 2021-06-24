@@ -506,7 +506,7 @@ pvr::Result OpenGLESDeferredShading::initView()
 	if (gl::isGlExtensionSupported("GL_KHR_debug")) { gl::ext::DebugMessageCallbackKHR(&debugCallback, NULL); }
 
 	_pixelLocalStorageSupported = gl::isGlExtensionSupported("GL_EXT_shader_pixel_local_storage");
-	_pixelLocalStorage2Supported = gl::isGlExtensionSupported("GL_EXT_shader_pixel_local_storage2");
+	_pixelLocalStorage2Supported = false; //gl::isGlExtensionSupported("GL_EXT_shader_pixel_local_storage2");
 
 	if (!gl::isGlExtensionSupported("GL_EXT_color_buffer_float"))
 	{

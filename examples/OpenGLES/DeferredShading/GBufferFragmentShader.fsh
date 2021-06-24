@@ -1,9 +1,7 @@
 #version 310 es
-#extension GL_EXT_shader_pixel_local_storage2 : enable
+#extension GL_EXT_shader_pixel_local_storage2 : disable
 
-#ifndef GL_EXT_shader_pixel_local_storage2
 #extension GL_EXT_shader_pixel_local_storage : require
-#endif
 
 uniform mediump sampler2D sTexture;
 uniform mediump sampler2D sBumpMap;
@@ -45,8 +43,6 @@ void main()
 	
 	pls.depth = vViewPosition.z / fFarClipDistance;
 
-#ifndef GL_EXT_shader_pixel_local_storage2
 	// clear pixel local storage colour when GL_EXT_shader_pixel_local_storage2 isn't supported
 	pls.color = vec3(0.0);
-#endif
 }

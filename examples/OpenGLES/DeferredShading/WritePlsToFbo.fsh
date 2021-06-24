@@ -1,9 +1,7 @@
 #version 310 es
-#extension GL_EXT_shader_pixel_local_storage2 : enable
+#extension GL_EXT_shader_pixel_local_storage2 : disable
 
-#ifndef GL_EXT_shader_pixel_local_storage2
 #extension GL_EXT_shader_pixel_local_storage : require
-#endif
 
 layout(rgba8)  __pixel_localEXT FragDataLocal {
 	layout(rgba8) mediump vec4 albedo;
@@ -12,11 +10,7 @@ layout(rgba8)  __pixel_localEXT FragDataLocal {
 	layout(r11f_g11f_b10f) mediump vec3 color;
 } pls;
 
-#ifndef GL_EXT_shader_pixel_local_storage2
 layout(location = 0) out mediump vec4 oColorFbo;
-#else
-layout(location = 0, rgba8) out mediump vec4 oColorFbo;
-#endif
 
 void main()
 {

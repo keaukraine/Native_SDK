@@ -1,9 +1,7 @@
 #version 310 es
-#extension GL_EXT_shader_pixel_local_storage2 : enable
+#extension GL_EXT_shader_pixel_local_storage2 : disable
 
-#ifndef GL_EXT_shader_pixel_local_storage2
 #extension GL_EXT_shader_pixel_local_storage : require
-#endif
 
 layout(std140, binding = 1) uniform StaticsPerPointLight
 {
