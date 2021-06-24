@@ -598,6 +598,8 @@ pvr::Result OpenGLESDeferredShading::initView()
 		// specifies the amount of storage required for pixel local variables whilst pls is enabled
 		gl::ext::FramebufferPixelLocalStorageSizeEXT(GL_DRAW_FRAMEBUFFER, _sizeOfPixelLocationStorage);
 	}
+	_sizeOfPixelLocationStorage = 4;
+	gl::ext::FramebufferPixelLocalStorageSizeEXT(GL_DRAW_FRAMEBUFFER, _sizeOfPixelLocationStorage);
 
 	gl::ClearColor(_clearColor.r, _clearColor.g, _clearColor.b, _clearColor.a);
 	gl::ClearDepthf(1.0f);
